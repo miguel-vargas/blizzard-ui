@@ -1,0 +1,24 @@
+<div class="container" fxLayout="row wrap" fxLayoutAlign="space-between">
+  <mat-card class="example-card" *ngFor="let token of tokens">
+    <div fxLayout="row" fxLayoutAlign="space-between center">
+      <div>
+        <div class="mat-display-3">
+          {{ token.region | uppercase }}
+        </div>
+      </div>
+      <div *ngIf="token?.region">
+        <img mat-card-avatar src="https://www.countryflags.io/{{ token.region }}/flat/64.png" />
+      </div>
+    </div>
+    <mat-card-content>
+      <div fxLayout="column">
+        <div class="mat-headline">
+          {{ token.price | copperToGold }}G
+        </div>
+        <div class="mat-caption">
+          Last Updated: {{ token.lastUpdatedTimestamp | epochToDate | date: "M/d/yy, h:mm a zzzz" }}
+        </div>
+      </div>
+    </mat-card-content>
+  </mat-card>
+</div>
