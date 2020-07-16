@@ -1,5 +1,4 @@
 import { Component, OnInit } from '@angular/core';
-import { HttpClient } from '@angular/common/http';
 
 @Component({
   selector: 'migs-tech-core',
@@ -8,7 +7,7 @@ import { HttpClient } from '@angular/common/http';
 })
 export class CoreComponent implements OnInit {
 
-  constructor(private http: HttpClient) { }
+  constructor() { }
 
   ngOnInit(): void {
   }
