@@ -1,6 +1,8 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
+import { HttpClientTestingModule } from '@angular/common/http/testing';
 
 import { CoreComponent } from './core.component';
+import { DotnetCoreTokensComponent } from './components/dotnet-core-tokens/dotnet-core-tokens.component';
 
 describe('CoreComponent', () => {
   let component: CoreComponent;
@@ -8,7 +10,13 @@ describe('CoreComponent', () => {
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ CoreComponent ]
+      declarations: [
+        CoreComponent,
+        DotnetCoreTokensComponent,
+      ],
+      imports: [
+        HttpClientTestingModule
+      ]
     })
     .compileComponents();
   }));
