@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { EnvironmentService } from '@shared/services/environment.service';
+import { Backend } from 'src/environments/ienvironemnt';
 
 @Component({
   selector: 'migs-tech-core',
@@ -6,10 +8,14 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./core.component.scss']
 })
 export class CoreComponent implements OnInit {
+  backends: Backend[];
 
-  constructor() { }
+  constructor(
+    private environmentService: EnvironmentService
+  ) { }
 
   ngOnInit(): void {
+    this.backends = this.environmentService.tokenBackends;
   }
 
 }

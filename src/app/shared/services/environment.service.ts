@@ -1,11 +1,11 @@
 import { Injectable } from '@angular/core';
-import { IEnvironment } from 'src/environments/ienvironemnt';
+import { Environment } from 'src/environments/model/environemnt';
 import { environment } from 'src/environments/environment';
 
 @Injectable({
   providedIn: 'root'
 })
-export class EnvironmentService implements IEnvironment {
+export class EnvironmentService implements Environment {
   get production() {
     return environment.production;
   }
@@ -18,12 +18,8 @@ export class EnvironmentService implements IEnvironment {
     return environment.logLevel;
   }
 
-  get dotNetCoreUrl() {
-    return environment.dotNetCoreUrl;
-  }
-
-  get springbootUrl() {
-    return environment.springbootUrl;
+  get tokenBackends() {
+    return environment.tokenBackends;
   }
 
   constructor() {}

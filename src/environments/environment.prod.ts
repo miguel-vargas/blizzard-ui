@@ -1,9 +1,17 @@
-import { IEnvironment } from './ienvironemnt';
+import { Environment } from './model/environemnt';
 
-export const environment: IEnvironment = {
+export const environment: Environment = {
   production: true,
   enableDebugTools: false,
   logLevel: 'debug',
-  dotNetCoreUrl: 'http://wowtoken.miguel-vargas.com/wow/tokens',
-  springbootUrl: 'http://wowtoken.miguel-vargas.com/wow/tokens',
+  tokenBackends: [
+    {
+      technology: '.NET Core 3.1',
+      url: 'http://wowtoken.miguel-vargas.com/wow/tokens'
+    },
+    {
+      technology: 'Spring Boot',
+      url: 'http://wowtoken.miguel-vargas.com/wow/tokens'
+    }
+  ]
 };

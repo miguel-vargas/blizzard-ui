@@ -1,4 +1,4 @@
-import { Component, OnInit, OnDestroy } from '@angular/core';
+import { Component, OnInit, OnDestroy, Input } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { Subscription } from 'rxjs';
 
@@ -7,16 +7,17 @@ import { WowTokenResponse } from '@shared/models/wow-token-response';
 import { EnvironmentService } from '@shared/services/environment.service';
 
 @Component({
-  selector: 'migs-tech-dotnet-core-tokens',
-  templateUrl: './dotnet-core-tokens.component.html',
-  styleUrls: ['./dotnet-core-tokens.component.scss']
+  selector: 'migs-tech-wow-tokens',
+  templateUrl: './wow-tokens.component.html',
+  styleUrls: ['./wow-tokens.component.scss']
 })
-export class DotnetCoreTokensComponent implements OnInit, OnDestroy {
+export class WowTokensComponent implements OnInit, OnDestroy {
+  @Input() url;
+
   tokens: WowToken[];
   subs: Subscription = new Subscription();
 
   constructor(
-    private environment: EnvironmentService,
     private http: HttpClient
   ) { }
 
@@ -33,7 +34,7 @@ export class DotnetCoreTokensComponent implements OnInit, OnDestroy {
   }
 
   getTokens() {
-    return this.http.get<WowTokenResponse>(this.environment.dotNetCoreUrl);
+    return this.http.get<WowTokenResponse>(this.url);
   }
 
 }

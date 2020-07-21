@@ -2,7 +2,7 @@ import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 import { HttpClientTestingModule } from '@angular/common/http/testing';
 
 import { CoreComponent } from './core.component';
-import { DotnetCoreTokensComponent } from './components/dotnet-core-tokens/dotnet-core-tokens.component';
+import { WowTokensComponent } from './components/wow-tokens/wow-tokens.component';
 
 describe('CoreComponent', () => {
   let component: CoreComponent;
@@ -12,7 +12,7 @@ describe('CoreComponent', () => {
     TestBed.configureTestingModule({
       declarations: [
         CoreComponent,
-        DotnetCoreTokensComponent,
+        WowTokensComponent,
       ],
       imports: [
         HttpClientTestingModule

@@ -1,15 +1,15 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 import { HttpClientTestingModule } from '@angular/common/http/testing';
 
-import { DotnetCoreTokensComponent } from './dotnet-core-tokens.component';
+import { WowTokensComponent } from './wow-tokens.component';
 
-describe('DotnetCoreTokensComponent', () => {
-  let component: DotnetCoreTokensComponent;
-  let fixture: ComponentFixture<DotnetCoreTokensComponent>;
+describe('WowTokensComponent', () => {
+  let component: WowTokensComponent;
+  let fixture: ComponentFixture<WowTokensComponent>;
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ DotnetCoreTokensComponent ],
+      declarations: [ WowTokensComponent ],
       imports: [
         HttpClientTestingModule
       ]
@@ -18,7 +18,7 @@ describe('DotnetCoreTokensComponent', () => {
   }));
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(DotnetCoreTokensComponent);
+    fixture = TestBed.createComponent(WowTokensComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

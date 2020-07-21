@@ -2,14 +2,22 @@
 // `ng build --prod` replaces `environment.ts` with `environment.prod.ts`.
 // The list of file replacements can be found in `angular.json`.
 
-import { IEnvironment, LogLevel } from './ienvironemnt';
+import { Environment } from './model/environemnt';
 
-export const environment: IEnvironment = {
+export const environment: Environment = {
   production: false,
   enableDebugTools: false,
   logLevel: 'debug',
-  dotNetCoreUrl: 'https://localhost:32768/wow/tokens',
-  springbootUrl: 'https://localhost:32768/wow/tokens',
+  tokenBackends: [
+    {
+      technology: '.NET Core 3.1',
+      url: 'https://localhost:32768/wow/tokens'
+    },
+    // {
+    //   technology: 'Spring Boot',
+    //   url: 'https://localhost:32768/wow/tokens'
+    // }
+  ]
 };
 
 /*
