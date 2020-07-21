@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { EnvironmentService } from '@shared/services/environment.service';
-import { Backend } from 'src/environments/ienvironemnt';
+import { Backend } from 'src/environments/models/backend';
 
 @Component({
   selector: 'migs-tech-core',

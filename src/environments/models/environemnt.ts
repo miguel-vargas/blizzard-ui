@@ -1,3 +1,5 @@
+import { Backend } from './backend';
+
 export type LogLevel = 'debug' | 'info' | 'warn' | 'error';
 
 export interface Environment {
@@ -7,10 +9,4 @@ export interface Environment {
     enableDebugTools: boolean;
     logLevel: LogLevel;
     tokenBackends: Backend[];
-}
-
-export interface Backend {
-    name?: string;
-    technology?: string;
-    url: string;
 }
