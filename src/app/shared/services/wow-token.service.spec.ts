@@ -12,12 +12,9 @@ describe('WowTokenService', () => {
     TestBed.configureTestingModule({
       imports: [
         HttpClientTestingModule
-      ],
-      providers: [
-        WowTokenService
       ]
     });
-    service = TestBed.get(WowTokenService);
+    service = TestBed.inject(WowTokenService);
     httpMock = TestBed.get(HttpTestingController);
   });
 
