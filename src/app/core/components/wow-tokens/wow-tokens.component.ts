@@ -1,40 +1,29 @@
-import { Component, OnInit, OnDestroy, Input } from '@angular/core';
-import { HttpClient } from '@angular/common/http';
-import { Subscription } from 'rxjs';
+import { Component, OnInit, Input } from '@angular/core';
+import { Observable } from 'rxjs';
 
-import { WowToken } from '@shared/models/wow-token';
 import { WowTokenResponse } from '@shared/models/wow-token-response';
-import { EnvironmentService } from '@shared/services/environment.service';
+import { WowTokenService } from '@shared/services/wow-token.service';
 
 @Component({
   selector: 'migs-tech-wow-tokens',
   templateUrl: './wow-tokens.component.html',
   styleUrls: ['./wow-tokens.component.scss']
 })
-export class WowTokensComponent implements OnInit, OnDestroy {
+export class WowTokensComponent implements OnInit {
   @Input() url;
 
-  tokens: WowToken[];
-  subs: Subscription = new Subscription();
+  tokenResponse$: Observable<WowTokenResponse>;
 
   constructor(
-    private http: HttpClient
+    private wowTokenService: WowTokenService
   ) { }
 
   ngOnInit(): void {
-    this.subs.add(
-      this.getTokens().subscribe(res => {
-        this.tokens = res.wowTokens;
-      })
-    );
-  }
-
-  ngOnDestroy(): void {
-    this.subs.unsubscribe();
+    this.tokenResponse$ = this.getTokens();
   }
 
   getTokens() {
-    return this.http.get<WowTokenResponse>(this.url);
+    return this.wowTokenService.getTokens(this.url);
   }
 
 }
