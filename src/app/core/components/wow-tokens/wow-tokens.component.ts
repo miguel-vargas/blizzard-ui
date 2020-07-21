@@ -10,7 +10,7 @@ import { WowTokenService } from '@shared/services/wow-token.service';
   styleUrls: ['./wow-tokens.component.scss']
 })
 export class WowTokensComponent implements OnInit {
-  @Input() url = null;
+  @Input() url = '';
 
   tokenResponse$: Observable<WowTokenResponse>;
 
