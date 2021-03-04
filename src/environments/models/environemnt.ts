@@ -1,4 +1,4 @@
-import { Backend } from './backend';
+import { ServiceUris } from './service-uris';
 
 export type LogLevel = 'debug' | 'info' | 'warn' | 'error';
 
@@ -8,5 +8,5 @@ export interface Environment {
     // Enables use of ng.profiler.timeChangeDetection(); in browser console
     enableDebugTools: boolean;
     logLevel: LogLevel;
-    tokenBackends: Backend[];
+    serviceUris: ServiceUris;
 }

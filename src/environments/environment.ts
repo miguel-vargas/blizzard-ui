@@ -8,16 +8,9 @@ export const environment: Environment = {
   production: false,
   enableDebugTools: false,
   logLevel: 'debug',
-  tokenBackends: [
-    {
-      technology: '.NET Core 3.1',
-      url: 'https://localhost:32768/wow/tokens'
-    },
-    // {
-    //   technology: 'Spring Boot',
-    //   url: 'https://localhost:32768/wow/tokens'
-    // }
-  ]
+  serviceUris: {
+    tokenUri: 'https://localhost:49153/wow/tokens'
+  },
 };
 
 /*
