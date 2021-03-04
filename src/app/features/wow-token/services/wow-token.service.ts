@@ -1,8 +1,10 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
-import { WowTokenResponse } from '@shared/models/wow-token-response';
 import { Observable } from 'rxjs';
-import { EnvironmentService } from './environment.service';
+
+import { EnvironmentService } from '@shared/services/environment.service';
+
+import { WowTokenResponse } from '../models/wow-token-response';
 
 @Injectable({
   providedIn: 'root'

@@ -2,7 +2,7 @@ import { TestBed } from '@angular/core/testing';
 import { HttpClientTestingModule, HttpTestingController } from '@angular/common/http/testing';
 
 import { WowTokenService } from './wow-token.service';
-import { WowTokenResponse } from '@shared/models/wow-token-response';
+import { WowTokenResponse } from '../models/wow-token-response';
 
 describe('WowTokenService', () => {
   let service: WowTokenService;
@@ -24,6 +24,7 @@ describe('WowTokenService', () => {
 
   describe('getTokens', () => {
     const testUrl = 'TESTURL';
+    service.tokenUri = testUrl;
 
     afterEach(() => {
       httpMock.verify();
@@ -45,7 +46,7 @@ describe('WowTokenService', () => {
         ]
       }
 
-      service.getTokens(testUrl).subscribe(res => {
+      service.getTokens().subscribe(res => {
         expect(res.wowTokens.length).toEqual(2);
         expect(res).toEqual(expectedResponse);
       });

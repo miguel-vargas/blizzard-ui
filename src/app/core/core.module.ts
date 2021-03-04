@@ -2,31 +2,21 @@ import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { BrowserModule } from '@angular/platform-browser';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import { HttpClientModule } from '@angular/common/http';
+
+import { SharedModule } from '@shared/modules/shared.module';
 
 import { CoreRoutingModule } from './core-routing.module';
 import { CoreComponent } from './core.component';
 
-import { MaterialModule } from '@shared/modules/material/material.module';
-import { FlexLayoutModule } from '@angular/flex-layout';
-import { CopperToGoldPipe } from '@shared/pipes/copper-to-gold.pipe';
-import { EpochToDatePipe } from '@shared/pipes/epoch-to-date.pipe';
-import { WowTokensComponent } from './components/wow-tokens/wow-tokens.component';
-
 @NgModule({
   declarations: [
     CoreComponent,
-    CopperToGoldPipe,
-    EpochToDatePipe,
-    WowTokensComponent,
   ],
   imports: [
     CommonModule,
     BrowserModule,
-    HttpClientModule,
+    SharedModule,
     CoreRoutingModule,
-    MaterialModule,
-    FlexLayoutModule,
     BrowserAnimationsModule
   ],
   providers: [],
