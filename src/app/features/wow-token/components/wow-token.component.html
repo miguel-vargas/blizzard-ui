@@ -1,34 +1,24 @@
-<div *ngIf="tokenResponse$ | async as tokenResponse">
-    <div class="example-card" *ngFor="let token of tokenResponse.wowTokens">
-        <div fxLayout="row" fxLayoutAlign="space-between center">
+<div *ngIf="tokenResponse$ | async as tokenResponse" class="p-d-flex p-flex-wrap p-jc-around">
+    <p-card class="token-card" *ngFor="let token of tokenResponse.wowTokens">
+        <div class="p-d-flex p-ai-center">
             <div>
-                <div class="mat-display-3">
+                <div class="region-text p-mr-3">
                     {{ token.region | uppercase }}
                 </div>
             </div>
             <div *ngIf="token?.region">
-                <img mat-card-avatar src="https://www.countryflags.io/{{ token.region }}/flat/64.png" />
+                <img class="region-flag" src="https://www.countryflags.io/{{ token.region }}/flat/64.png" />
             </div>
         </div>
         <div>
-            <div fxLayout="column">
-                <div class="mat-headline">
+            <div class="p-d-flex p-flex-column">
+                <div class="token-text">
                     {{ token.price | copperToGold }}G
                 </div>
-                <div class="mat-caption">
+                <div class="date-text">
                     Last Updated: {{ token.lastUpdatedTimestamp | epochToDate | date: "M/d/yy, h:mm a zzzz" }}
                 </div>
             </div>
         </div>
-    </div>
+    </p-card>
 </div>
-
-<p-card>
-    <ng-template pTemplate="header">
-        Header content here
-    </ng-template>
-    Body Content
-    <ng-template pTemplate="footer">
-        Footer content here
-    </ng-template>
-</p-card>

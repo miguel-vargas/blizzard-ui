@@ -1,14 +1,22 @@
-.mat-card-avatar {
+.region-flag {
     border-radius: 0%;
     height: 64px;
     width: 64px;
 }
 
-.mat-display-3 {
-    margin: 0;
+.token-card {
+    min-width: 15vw;
 }
 
-.example-card {
-    min-width: 15vw;
+.region-text {
+    font-size: 2rem;
+}
+
+.token-text {
+    font-size: 3rem;
+}
+
+.date-text {
+    font-size: 1rem;
 }
   
