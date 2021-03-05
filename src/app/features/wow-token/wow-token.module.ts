@@ -1,8 +1,7 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { HttpClientModule } from '@angular/common/http';
 
-import { MaterialModule } from '@shared/modules/material/material.module';
+import { SharedModule } from '@shared/modules/shared.module';
 
 import { WowTokenRoutingModule } from './wow-token-routing.module';
 import { CopperToGoldPipe } from './pipes/copper-to-gold.pipe';
@@ -18,8 +17,7 @@ import { WowTokenComponent } from './components/wow-token.component';
   ],
   imports: [
     CommonModule,
-    HttpClientModule,
-    MaterialModule,
+    SharedModule,
     WowTokenRoutingModule
   ]
 })
