@@ -1,13 +1,13 @@
-<div *ngIf="tokenResponse$ | async as tokenResponse" class="p-grid">
-    <p-card class="p-col-12 p-md-12 p-lg-3" *ngFor="let token of tokenResponse.wowTokens">
+<div class="p-grid" *ngIf="tokenResponse$ | async as tokenResponse; else showSkeletons">
+    <p-card class="p-col-12 p-md-6 p-lg-3" *ngFor="let token of tokenResponse.wowTokens">
         <div class="p-d-flex p-ai-center">
+            <div *ngIf="token?.region">
+                <img class="region-flag p-mr-3" src="https://www.countryflags.io/{{ token.region }}/flat/64.png" />
+            </div>
             <div>
-                <div class="region-text p-mr-3">
+                <div class="region-text">
                     {{ token.region | uppercase }}
                 </div>
-            </div>
-            <div *ngIf="token?.region">
-                <img class="region-flag" src="https://www.countryflags.io/{{ token.region }}/flat/64.png" />
             </div>
         </div>
         <div class="p-d-flex p-flex-column">
@@ -20,3 +20,9 @@
         </div>
     </p-card>
 </div>
+
+<ng-template #showSkeletons>
+    <div class="p-grid">
+        <p-skeleton class="p-col-12 p-md-6 p-lg-3" height="209px" *ngFor="let number of [0,1,2,3,4]"></p-skeleton>
+    </div>
+</ng-template>
