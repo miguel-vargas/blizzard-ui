@@ -9,7 +9,7 @@ export const environment: Environment = {
   enableDebugTools: false,
   logLevel: 'debug',
   serviceUris: {
-    tokenUri: 'https://localhost:49153/wow/tokens'
+    tokenUri: 'https://localhost:49159/wow/tokens'
   },
 };
 

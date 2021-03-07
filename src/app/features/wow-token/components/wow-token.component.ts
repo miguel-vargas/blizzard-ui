@@ -11,6 +11,7 @@ import { WowTokenResponse } from '../models/wow-token-response';
 })
 export class WowTokenComponent implements OnInit {
   tokenResponse$: Observable<WowTokenResponse>;
+  error$: Observable<boolean>;
 
   constructor(
     private wowTokenService: WowTokenService
@@ -18,6 +19,7 @@ export class WowTokenComponent implements OnInit {
 
   ngOnInit(): void {
     this.tokenResponse$ = this.getTokens();
+    this.error$ = this.wowTokenService.error$;
   }
 
   getTokens() {
