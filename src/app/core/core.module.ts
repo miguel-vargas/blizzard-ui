@@ -6,11 +6,13 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { SharedModule } from '@shared/modules/shared.module';
 
 import { CoreRoutingModule } from './core-routing.module';
-import { CoreComponent } from './core.component';
+import { CoreComponent } from './components/core.component';
+import { ToolbarComponent } from './components/toolbar/toolbar.component';
 
 @NgModule({
   declarations: [
     CoreComponent,
+    ToolbarComponent,
   ],
   imports: [
     CommonModule,
