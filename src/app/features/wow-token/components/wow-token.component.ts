@@ -18,12 +18,16 @@ export class WowTokenComponent implements OnInit {
   ) { }
 
   ngOnInit(): void {
-    this.tokenResponse$ = this.getTokens();
+    this.getTokens();
     this.error$ = this.wowTokenService.error$;
   }
 
-  getTokens() {
-    return this.wowTokenService.getTokens();
+  getTokens(): void {
+    this.tokenResponse$ = this.wowTokenService.getTokens();
+  }
+
+  getTokenOnRefresh() {
+    this.tokenResponse$ = this.wowTokenService.getTokens();
   }
 
 }
