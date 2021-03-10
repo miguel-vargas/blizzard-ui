@@ -23,6 +23,8 @@ export class WowTokenService {
   }
 
   public getTokens(): Observable<WowTokenResponse> {
+    this.error$.next(false);
+
     return this.http.get<WowTokenResponse>(this.tokenUri)
       .pipe(
         catchError((error) => {
