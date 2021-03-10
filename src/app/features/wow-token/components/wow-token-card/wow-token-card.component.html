@@ -1,0 +1,20 @@
+<p-card>
+    <div class="p-d-flex p-ai-center">
+        <div *ngIf="token?.region">
+            <img class="region-flag p-mr-3" src="https://www.countryflags.io/{{ token.region }}/flat/64.png" />
+        </div>
+        <div>
+            <div class="region-text">
+                {{ token.region | uppercase }}
+            </div>
+        </div>
+    </div>
+    <div class="p-d-flex p-flex-column">
+        <div class="token-text">
+            {{ token.price | copperToGold }}G
+        </div>
+        <div class="date-text">
+            Last Updated: {{ token.lastUpdatedTimestamp | epochToDate | date: "M/d/yy, h:mm a zzzz" }}
+        </div>
+    </div>
+</p-card>
